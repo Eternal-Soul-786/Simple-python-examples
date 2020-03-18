@@ -9,27 +9,29 @@ class TechLearners:
     java={'jack':'12:45','johnson':'10:30','caty':'4:30','miley':'2:30'}
     def __init__(self, interest):
         
-        self.interest_list.append(interest)
+        self.interest=interest
+    def addStacks(self):
+       self.interest_list.append(self.interest)
    
-    def SetMentorOrLearner(self,pa,id):
+    def setMentorOrLearner(self,pa,id):
          t = id
          count =0
          for i,j in self.mentors.items():
              if j == t:
                  print("participant is a mentor")
-                 self.SetAvailableTime()
+                 self.setAvailableTime()
                  break
              count =count+1
          if(count == len(self.mentors)):
              print("participant is a learner ")
         
-    def SetAvailableTime(self):
+    def setAvailableTime(self):
           named_tuple = time.localtime() # get struct_time
           time_string = time.strftime("%H:%M", named_tuple)
           print("so the available time is",time_string)
-          self.GetMentor(time_string,self.interest_list)
+          self.getMentor(time_string,self.interest_list)
           
-    def GetMentor(self,tt,uu):
+    def getMentor(self,tt,uu):
          time = tt
          count =0
          if(self.interest_list == ['python']):
@@ -38,16 +40,12 @@ class TechLearners:
                     print("so the available mentor is",k)
                     break
                 count =count+1
-            if(count == len(self.python)):
+         if(count == len(self.python)):
                print("no mentor is available")
-                
-        
-        
-        
-        
+               
         
 g = input("Enter the area of interest or domain")
 e=TechLearners(g)
 k=input("enter the name of the participant")
 i=input("enter the id of the participant")
-e.SetMentorOrLearner(k,i)
+e.setMentorOrLearner(k,i)
