@@ -10,8 +10,10 @@ class TechLearners:
     def __init__(self, interest):
         
         self.interest=interest
-    def addStacks(self):
-       self.interest_list.append(self.interest)
+        self.addStacks(interest)
+        
+    def addStacks(self,interest):
+       self.interest_list.append(interest)
    
     def setMentorOrLearner(self,pa,id):
          t = id
